@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chspif 下载站</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="particles"></div>
+    
+    <div class="container">
+        <header class="header">
+            <div class="logo">
+                <svg class="logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                    <polyline points="7 10 12 15 17 10"></polyline>
+                    <line x1="12" y1="15" x2="12" y2="3"></line>
+                </svg>
+                <h1>Chspif 下载站</h1>
+            </div>
+        </header>
+
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="搜索文件..." autocomplete="off">
+            <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="11" cy="11" r="8"></circle>
+                <path d="m21 21-4.35-4.35"></path>
+            </svg>
+        </div>
+
+        <div class="filter-tabs">
+            <button class="tab active" data-filter="all">全部</button>
+            <button class="tab" data-filter="mods">模组</button>
+            <button class="tab" data-filter="game">小游戏</button>
+            <button class="tab" data-filter="litematic">投影文件</button>
+            <button class="tab" data-filter="resourcepacks">资源包</button>
+        </div>
+
+        <div id="fileList" class="file-list">
+            <div class="loading">
+                <div class="spinner"></div>
+                <p>加载中...</p>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <p>&copy; 2026 CHSPIF. Internal use only.</p>
+        </footer>
+    </div>
+
+    <script src="files/game.js"></script>
+    <script src="files/litematic.js"></script>
+    <script src="files/mods.js"></script>
+    <script src="files/resourcepacks.js"></script>
+    <script src="config.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

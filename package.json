@@ -1,0 +1,15 @@
+{
+    "name": "chspif-download-site",
+    "version": "1.0.0",
+    "description": "Internal file download site powered by Alibaba Cloud OSS",
+    "scripts": {
+        "dev": "npx serve .",
+        "build": "echo 'No build step required - static site'"
+    },
+    "keywords": [
+        "download",
+        "oss",
+        "static"
+    ],
+    "license": "MIT"
+}

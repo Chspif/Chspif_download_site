@@ -1,6 +1,8 @@
 class DownloadApp {
     constructor() {
-        this.files = SITE_CONFIG.files;
+        this.files = [...SITE_CONFIG.files].sort((a, b) => {
+            return new Date(b.uploadDate) - new Date(a.uploadDate);
+        });
         this.filteredFiles = [...this.files];
         this.currentFilter = 'all';
         this.searchQuery = '';

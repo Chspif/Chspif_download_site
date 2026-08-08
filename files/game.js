@@ -13,5 +13,10 @@ const GAME_FILES = [
         name: '260613小游戏整合包-完整版',
         uploadDate: '2026-06-13',
         downloadUrl: 'https://chspif.oss-cn-hangzhou.aliyuncs.com/game/260613%E5%B0%8F%E6%B8%B8%E6%88%8F%E6%95%B4%E5%90%88%E5%8C%85-%E5%AE%8C%E6%95%B4%E7%89%88.zip'
+    },
+        {
+        name: 'GT_New_Horizons_2.9.0-beta-2_Java_17-25.zip',
+        uploadDate: '2026-08-08',
+        downloadUrl: 'https://www.chspif.website:5667/s/a333053e07b540c39f'
     }
 ];

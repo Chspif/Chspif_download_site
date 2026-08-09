@@ -17,6 +17,6 @@ const GAME_FILES = [
         {
         name: 'GT_New_Horizons_2.9.0-beta-2_Java_17-25.zip',
         uploadDate: '2026-08-08',
-        downloadUrl: 'https://www.chspif.website:5667/s/36e17d939eec492090'
+        downloadUrl: 'https://www.chspif.website:5667/s/d8585c6a21ba403b9e'
     }
 ];

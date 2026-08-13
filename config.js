@@ -3,7 +3,8 @@ const SITE_CONFIG = {
         { key: 'mods', files: MODS_FILES },
         { key: 'game', files: GAME_FILES },
         { key: 'litematic', files: LITEMATIC_FILES },
-        { key: 'resourcepacks', files: RESOURCEPACKS_FILES }
+        { key: 'resourcepacks', files: RESOURCEPACKS_FILES },
+        { key: 'saves', files: SAVES_FILES }
     ],
     get files() {
         return this.categories.flatMap(cat =>

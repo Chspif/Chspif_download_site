@@ -2,12 +2,12 @@ const MODS_FILES = [
     {
         name: '26.2不卡键模组包',
         uploadDate: '2026-08-25',
-        downloadUrl: 'https://www.chspif.website:667/s/e391a911f4d14df78d'
+        downloadUrl: 'https://www.chspif.website:667/s/7fd10ac9fae34f3689'
     },
     {
         name: '26.2全生电模组包',
         uploadDate: '2026-08-25',
-        downloadUrl: 'https://www.chspif.website:667/s/1f695ab6a0454eaba3'
+        downloadUrl: 'https://www.chspif.website:667/s/57a989d03ceb4f688b'
     },
     {
         name: '1.21.11懒人生电模组包（非本周目）',

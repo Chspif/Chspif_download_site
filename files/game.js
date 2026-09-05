@@ -23,5 +23,15 @@ const GAME_FILES = [
         name: '20260826小游戏客户端',
         uploadDate: '2026-08-22',
         downloadUrl: 'https://www.chspif.website:667/s/d704c46bf80e4788a6'
+    },
+    {
+        name: '20260905蟑螂必须死客户端',
+        uploadDate: '2026-09-05',
+        downloadUrl: 'https://www.chspif.website:667/s/becdd567b68140be9b'
+    },
+    {
+        name: '20260905蟑螂必须死资源包',
+        uploadDate: '2026-09-05',
+        downloadUrl: 'https://www.chspif.website:667/s/59bea7d33f524d198d'
     }
 ];

@@ -3,59 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chspif 下载站</title>
+    <meta name="theme-color" content="#090b10">
+    <title>CHSPIF | 远境档案</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=DM+Mono:wght@400;500&family=Noto+Serif+SC:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="particles"></div>
-    
-    <div class="container">
-        <header class="header">
-            <div class="logo">
-                <svg class="logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                    <polyline points="7 10 12 15 17 10"></polyline>
-                    <line x1="12" y1="15" x2="12" y2="3"></line>
-                </svg>
-                <h1>Chspif 下载站</h1>
+    <canvas id="scene" aria-hidden="true"></canvas>
+    <div class="mist mist-back" aria-hidden="true"></div>
+    <div class="mist mist-front" aria-hidden="true"></div>
+    <div class="screen-vignette" aria-hidden="true"></div>
+
+    <header class="topbar">
+        <a class="brand" href="#top" aria-label="CHSPIF 首页"><span class="brand-sigil">C</span><span><b>CHSPIF</b><small>THE FAR REACH ARCHIVE</small></span></a>
+        <div class="topbar-meta"><span class="status-dot"></span><span>档案已苏醒</span><i></i><span id="clock">--:--:--</span></div>
+    </header>
+
+    <main id="top">
+        <section class="title-screen" aria-labelledby="page-title">
+            <div class="title-backdrop" aria-hidden="true">
+                <div class="moon-halo"></div><div class="moon"></div>
+                <div class="arch arch-outer"></div><div class="arch arch-inner"></div>
+                <div class="arch-foot arch-left"></div><div class="arch-foot arch-right"></div>
+                <div class="emblem"><span class="emblem-crown"></span><span class="emblem-face">C</span><span class="emblem-wings"></span></div>
+                <div class="ground-fog"></div>
             </div>
-        </header>
-
-        <div class="search-container">
-            <input type="text" id="searchInput" placeholder="搜索文件..." autocomplete="off">
-            <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <circle cx="11" cy="11" r="8"></circle>
-                <path d="m21 21-4.35-4.35"></path>
-            </svg>
-        </div>
-
-        <div class="filter-tabs">
-            <button class="tab active" data-filter="all">全部</button>
-            <button class="tab" data-filter="mods">模组</button>
-            <button class="tab" data-filter="game">小游戏</button>
-            <button class="tab" data-filter="litematic">投影文件</button>
-            <button class="tab" data-filter="resourcepacks">资源包</button>
-            <button class="tab" data-filter="saves">存档</button>
-        </div>
-
-        <div id="fileList" class="file-list">
-            <div class="loading">
-                <div class="spinner"></div>
-                <p>加载中...</p>
+            <div class="title-content">
+                <p class="title-kicker"><span></span> A QUIET PLACE BEYOND THE MIST <span></span></p>
+                <h1 id="page-title">CHSPIF</h1>
+                <p class="title-subtitle">远境档案 <span>·</span> THE ARCHIVE OF WORLDS</p>
+                <div class="title-rule"><i></i></div>
+                <nav class="main-menu" aria-label="主菜单">
+                    <a class="menu-choice selected" href="#library"><span class="choice-mark">›</span><span>进入档案</span><small>ENTER THE ARCHIVE</small></a>
+                    <button class="menu-choice" id="randomFile" type="button"><span class="choice-mark">›</span><span>寻访一份记录</span><small>DISCOVER A RECORD</small></button>
+                    <button class="menu-choice sound-choice" id="audioToggle" type="button" aria-label="播放背景音乐" aria-pressed="false"><span class="choice-mark">›</span><span class="audio-label">唤醒回响</span><small>AMBIENT MUSIC <i class="sound-bars"><b></b><b></b><b></b><b></b></i></small></button>
+                </nav>
+                <p class="menu-hint">↑ ↓ 选择 <span>·</span> ENTER 确认</p>
             </div>
-        </div>
+            <div class="title-side-note">A COLLECTION OF<br>WORLDS, TOOLS &<br>SMALL WONDERS</div>
+            <div class="title-bottom"><span>风穿过空旷的回廊</span><span class="scroll-indicator"><i></i> 向下探索</span><span>VOL. 06 <b>✳</b> 2026</span></div>
+        </section>
 
-        <footer class="footer">
-            <p>&copy; 2026 CHSPIF. Internal use only.</p>
-        </footer>
-    </div>
+        <section class="library" id="library" aria-labelledby="library-title">
+            <div class="library-head">
+                <div><p class="section-kicker">CHAPTER 01 <span>·</span> COLLECTED RECORDS</p><h2 id="library-title">远境档案 <sup id="fileCount">00</sup></h2><p class="library-intro">模组、小游戏、投影文件、资源包与存档。<br>每一份记录，都通往另一段旅程。</p></div>
+                <div class="library-ornament" aria-hidden="true"><span></span><i></i><span></span></div>
+            </div>
+            <div class="toolbar">
+                <label class="search-box" for="searchInput"><span class="search-symbol">⌕</span><input type="search" id="searchInput" placeholder="在档案中寻找..." autocomplete="off"><kbd>/</kbd></label>
+                <div class="filter-tabs" role="tablist" aria-label="文件分类">
+                    <button class="tab active" data-filter="all" role="tab" aria-selected="true">全部 <i>ALL</i></button>
+                    <button class="tab" data-filter="mods" role="tab" aria-selected="false">模组 <i>MODS</i></button>
+                    <button class="tab" data-filter="game" role="tab" aria-selected="false">小游戏 <i>GAMES</i></button>
+                    <button class="tab" data-filter="litematic" role="tab" aria-selected="false">投影文件 <i>BUILDS</i></button>
+                    <button class="tab" data-filter="resourcepacks" role="tab" aria-selected="false">资源包 <i>ARTIFACTS</i></button>
+                    <button class="tab" data-filter="saves" role="tab" aria-selected="false">存档 <i>WORLDS</i></button>
+                </div>
+            </div>
+            <div id="fileList" class="file-list" aria-live="polite"><div class="loading"><span class="spinner"></span><p>正在唤醒档案...</p></div></div>
+        </section>
+    </main>
 
-    <script src="files/game.js"></script>
-    <script src="files/litematic.js"></script>
-    <script src="files/mods.js"></script>
-    <script src="files/resourcepacks.js"></script>
-    <script src="files/saves.js"></script>
-    <script src="config.js"></script>
-    <script src="app.js"></script>
+    <footer class="footer"><div class="footer-seal">C</div><div><strong>CHSPIF</strong><span>THE FAR REACH ARCHIVE</span></div><p>© 2026 CHSPIF · Internal use only.</p><a href="#top">返回入口 <span>↑</span></a></footer>
+    <audio id="ambientAudio" loop preload="auto" playsinline><source src="assets/silksong-ambient.mp4" type="audio/mp4"></audio>
+
+    <script src="https://cdn.jsdelivr.net/npm/three@0.161.0/build/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.2/lib/anime.min.js"></script>
+    <script src="files/game.js"></script><script src="files/litematic.js"></script><script src="files/mods.js"></script><script src="files/resourcepacks.js"></script><script src="files/saves.js"></script>
+    <script src="config.js"></script><script src="app.js"></script>
 </body>
 </html>
